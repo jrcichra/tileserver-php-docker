@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:buster
 
 RUN apt-get update -y && apt-get install -qq -y \
   apache2 \
