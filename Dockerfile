@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM debian:jessie
 
 RUN apt-get update -y && apt-get install -qq -y \
   apache2 \
