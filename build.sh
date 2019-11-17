@@ -18,5 +18,5 @@ docker buildx inspect --bootstrap
 # Phase 2 - sign in
 echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin 
 # Phase 3 - Build
-docker buildx build --cache-from jrcichra/tileserver-php-rpi --platform linux/amd64,linux/arm64,linux/arm/v7 -t jrcichra/tileserver-php-rpi --push .
+docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t jrcichra/tileserver-php-rpi --push .
 docker buildx imagetools inspect jrcichra/tileserver-php-rpi
