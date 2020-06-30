@@ -2,9 +2,9 @@ FROM debian:buster
 
 RUN apt-get update -y && apt-get install -qq -y \
   apache2 \
-  php7 \
-  php7-sqlite \
-  php7-gd \
+  php7.3 \
+  php7.3-sqlite \
+  php7.3-gd \
   unzip
 
 COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
