@@ -10,7 +10,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 docker-compose --version
 docker buildx --help
-docker run --rm --privileged docker/binfmt:820fdd95a9972a5308930a2bdfb8573dd4447ad3
+docker run --rm --privileged aptman/qus -s -- -p
 cat /proc/sys/fs/binfmt_misc/qemu-aarch64
 docker buildx create --name testbuilder
 docker buildx use testbuilder
@@ -18,5 +18,5 @@ docker buildx inspect --bootstrap
 # Phase 2 - sign in
 echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin 
 # Phase 3 - Build
-docker buildx build --platform linux/amd64,linux/arm/v7 -t jrcichra/tileserver-php --push .
-docker buildx imagetools inspect jrcichra/tileserver-php-rpi
+docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t jrcichra/tileserver-php --push .
+docker buildx imagetools inspect jrcichra/tileserver-php
