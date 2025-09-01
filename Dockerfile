@@ -1,4 +1,4 @@
-FROM debian:buster
+FROM debian:trixie
 
 RUN apt-get update -y && apt-get install -qq -y \
   apache2 \
